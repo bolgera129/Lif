@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.justifyTextLeft{
+  text-align: left;
+}
+
+.padding10{
+  padding: 10px;
+}
+
+.padding20{
+  padding: 20px;
+}
