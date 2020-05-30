@@ -1,0 +1,10 @@
+.productImg{
+    width: 100%;
+}
+
+.shoppingCart{
+    background-color: transparent !important;
+    color: black !important;
+    border-color: transparent !important;
+    padding: 0 !important;
+}
