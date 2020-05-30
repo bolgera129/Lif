@@ -1,19 +1,20 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import css from "../../css/Product.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faShoppingCart} from "@fortawesome/free-solid-svg-icons"
 import Button from "react-bootstrap/Button"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
+import {StoreContext} from "../../contexts/contexts"
 
 
 export default function Product(props){
 
-    //const [cart, setCart] = useState();
-
     const shirt = props.shirt;
-
-    function addToCart () {
+    let { addToCart,cartItems } = useContext(StoreContext);
+    
+    function handleAddToCart (item) {
+        addToCart(item)
     }
 
     return(
@@ -28,7 +29,7 @@ export default function Product(props){
                             Add To Cart
                         </Tooltip>
                     }>
-                        <Button onClick = {addToCart} className = {css.shoppingCart}>
+                        <Button onClick = { i => handleAddToCart(shirt.id)} className = {css.shoppingCart}>
                             <FontAwesomeIcon icon = {faShoppingCart}/>
                         </Button>
                     </OverlayTrigger>
