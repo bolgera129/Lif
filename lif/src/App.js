@@ -7,29 +7,33 @@ import About from "./Components/About/About"
 import Cart from "./Components/Cart/Cart"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import StoreContextProvider from './contexts/contexts';
+
 
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar/>
-        <Switch>
-          <Route path = "/contact">
-            <Contact/>
-          </Route>
-          <Route path = "/about">
-            <About/>
-          </Route>
-          <Route path = "/cart">
-            <Cart/>
-          </Route>
-          <Route path ="/">
-            <Main/>
-          </Route>
-        </Switch>
-      </div>      
-    </Router>
+    <StoreContextProvider>
+      <Router>
+        <div className="App">
+          <NavBar/>
+          <Switch>
+            <Route path = "/contact">
+              <Contact/>
+            </Route>
+            <Route path = "/about">
+              <About/>
+            </Route>
+            <Route path = "/cart">
+              <Cart/>
+            </Route>
+            <Route path ="/">
+              <Main/>
+            </Route>
+          </Switch>
+        </div>      
+      </Router>
+    </StoreContextProvider>
 
   );
 }
